@@ -68,6 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
+    <Content Include="index.html" />
+    <Content Include="nosotros.html" />
+    <Content Include="contacto.html" />
+    <Content Include="tienda.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
