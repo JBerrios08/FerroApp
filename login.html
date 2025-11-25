@@ -210,10 +210,28 @@ VALUES
 (5, 3), -- Team
 (6, 4); -- Usuario/cliente
 </code></pre>
-                <ol start="5" class="mb-0">
+                <ol start="5" class="mb-5">
                     <li>Configura tu backend (API o aplicación .NET/PHP) con el usuario y contraseña de MySQL que definiste en XAMPP.</li>
                     <li>Prueba el login con los usuarios insertados y ajusta los permisos según el rol.</li>
                 </ol>
+
+                <div class="border rounded p-4 bg-light">
+                    <h3 class="h5 fw-bold">Cómo vincular la base de datos a tu app ASP.NET</h3>
+                    <ol class="mb-3">
+                        <li>Instala el paquete NuGet <code>MySql.Data</code> (o <code>MySqlConnector</code> si prefieres el conector comunitario).</li>
+                        <li>Abre <code>Web.config</code> y agrega la cadena de conexión con el usuario que creaste en XAMPP:</li>
+                    </ol>
+<pre class="bg-dark text-white p-3 rounded small mb-3"><code>&lt;connectionStrings&gt;
+  &lt;add name="FerroAppConnection"
+       connectionString="Server=localhost;Port=3306;Database=ferroapp;Uid=tu_usuario;Pwd=tu_contrasena;SslMode=None;CharSet=utf8mb4;" 
+       providerName="MySql.Data.MySqlClient" /&gt;
+&lt;/connectionStrings&gt;
+</code></pre>
+                    <ol start="3" class="mb-0">
+                        <li>En tu capa de datos, usa el nombre <code>FerroAppConnection</code> para crear <code>MySqlConnection</code> y ejecutar comandos CRUD (usuarios, roles, productos).</li>
+                        <li>Guarda las contraseñas con hash (ej. <code>BCrypt.Net-Next</code> o <code>ASP.NET Identity</code>) antes de insertarlas en <code>usuarios</code>.</li>
+                    </ol>
+                </div>
             </div>
         </section>
     </main>
