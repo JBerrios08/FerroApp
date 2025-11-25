@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ferrooriente - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Ferrooriente</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <header class="text-center mb-4">
+            <h1 class="fw-bold">Acceso y registro</h1>
+            <p class="text-muted mb-0">Prepara el módulo de autenticación y roles para tu futuro e-commerce.</p>
+        </header>
+
+        <section class="row g-4 mb-5">
+            <div class="col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Iniciar sesión</h5>
+                        <form class="mt-3">
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Correo</label>
+                                <input type="email" class="form-control" id="loginEmail" placeholder="correo@empresa.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="loginPassword" placeholder="********">
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="rememberMe">
+                                    <label class="form-check-label" for="rememberMe">Recordarme</label>
+                                </div>
+                                <a href="#forgot" class="link-primary">Olvidé mi contraseña</a>
+                            </div>
+                            <button type="button" class="btn btn-primary w-100">Entrar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Registrarse</h5>
+                        <form class="mt-3">
+                            <div class="mb-3">
+                                <label for="registerName" class="form-label">Nombre completo</label>
+                                <input type="text" class="form-control" id="registerName" placeholder="Nombre y apellido">
+                            </div>
+                            <div class="mb-3">
+                                <label for="registerEmail" class="form-label">Correo</label>
+                                <input type="email" class="form-control" id="registerEmail" placeholder="usuario@dominio.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="registerPassword" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="registerPassword" placeholder="Mínimo 8 caracteres">
+                            </div>
+                            <div class="mb-3">
+                                <label for="registerRole" class="form-label">Rol inicial</label>
+                                <select id="registerRole" class="form-select">
+                                    <option value="usuario" selected>Usuario (cliente)</option>
+                                    <option value="team">Team (vista del CRUD)</option>
+                                    <option value="supervisor">Supervisor (CRUD de tienda)</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-success w-100">Crear cuenta</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4" id="forgot">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Recuperar contraseña</h5>
+                        <form class="mt-3">
+                            <div class="mb-3">
+                                <label for="resetEmail" class="form-label">Correo registrado</label>
+                                <input type="email" class="form-control" id="resetEmail" placeholder="correo@dominio.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="resetCode" class="form-label">Código de verificación</label>
+                                <input type="text" class="form-control" id="resetCode" placeholder="Código enviado a tu correo">
+                            </div>
+                            <div class="mb-3">
+                                <label for="newPassword" class="form-label">Nueva contraseña</label>
+                                <input type="password" class="form-control" id="newPassword" placeholder="********">
+                            </div>
+                            <button type="button" class="btn btn-outline-primary w-100">Restablecer acceso</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-light p-4 p-md-5 rounded mb-5">
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold">Roles y alcance</h2>
+                    <p class="mb-3">Define estos niveles en la base de datos para controlar quién puede gestionar usuarios y productos.</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Administrador:</strong> CRUD de usuarios y CRUD de productos.</li>
+                        <li class="list-group-item"><strong>Supervisor:</strong> CRUD de productos de la tienda.</li>
+                        <li class="list-group-item"><strong>Team:</strong> Solo vista del CRUD (sin editar).</li>
+                        <li class="list-group-item"><strong>Usuario:</strong> Clientes que navegan y compran en la tienda.</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Credenciales de ejemplo</h5>
+                            <p class="text-muted">Úsalas para poblar la tabla de usuarios iniciales.</p>
+                            <div class="table-responsive">
+                                <table class="table table-sm align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th>Rol</th>
+                                            <th>Correo</th>
+                                            <th>Contraseña</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>Administrador</td><td>bo0310042024@unab.edu.sv</td><td>Jaime123</td></tr>
+                                        <tr><td>Supervisor</td><td>um1240042023@unab.edu.sv</td><td>Rafael123</td></tr>
+                                        <tr><td>Team</td><td>cs1209042018@unab.edu.sv</td><td>Carlos123</td></tr>
+                                        <tr><td>Team</td><td>cr0367042024@unab.edu.sv</td><td>Alexis123</td></tr>
+                                        <tr><td>Team</td><td>no0882042024@unab.edu.sv</td><td>Andrea123</td></tr>
+                                        <tr><td>Usuario</td><td>jaime.berrios08@gmail.com</td><td>Fer123</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="small text-muted mb-0">Recuerda almacenar las contraseñas encriptadas (por ejemplo, con bcrypt) en producción.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card shadow-sm">
+            <div class="card-body">
+                <h2 class="fw-bold">Paso a paso: base de datos MySQL en XAMPP</h2>
+                <p class="text-muted">Guía rápida para crear la base de datos local que soportará autenticación y permisos.</p>
+                <ol class="mb-4">
+                    <li>Abre XAMPP Control Panel y levanta los servicios <strong>Apache</strong> y <strong>MySQL</strong>.</li>
+                    <li>Haz clic en <em>Admin</em> del módulo MySQL para entrar a <strong>phpMyAdmin</strong>.</li>
+                    <li>En phpMyAdmin crea una base de datos llamada <code>ferroapp</code> con cotejamiento <code>utf8mb4_general_ci</code>.</li>
+                    <li>Ejecuta el siguiente script SQL en la pestaña SQL para generar tablas y relaciones:</li>
+                </ol>
+<pre class="bg-dark text-white p-3 rounded small"><code>CREATE TABLE roles (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(50) NOT NULL UNIQUE,
+  descripcion VARCHAR(255)
+);
+
+CREATE TABLE usuarios (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(120) NOT NULL,
+  correo VARCHAR(150) NOT NULL UNIQUE,
+  password_hash VARCHAR(255) NOT NULL,
+  creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE usuario_rol (
+  usuario_id INT NOT NULL,
+  rol_id INT NOT NULL,
+  PRIMARY KEY (usuario_id, rol_id),
+  FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE,
+  FOREIGN KEY (rol_id) REFERENCES roles(id) ON DELETE CASCADE
+);
+
+INSERT INTO roles (nombre, descripcion) VALUES
+('administrador', 'CRUD de usuarios y productos'),
+('supervisor', 'CRUD de productos'),
+('team', 'Solo lectura del CRUD'),
+('usuario', 'Clientes de la tienda');
+</code></pre>
+                <p>Para cargar los usuarios de ejemplo, en la misma pestaña SQL ejecuta (ajusta <code>password_hash</code> al valor encriptado que genere tu backend):</p>
+<pre class="bg-dark text-white p-3 rounded small"><code>INSERT INTO usuarios (nombre, correo, password_hash) VALUES
+('Administrador', 'bo0310042024@unab.edu.sv', 'HASH_Jaime123'),
+('Supervisor', 'um1240042023@unab.edu.sv', 'HASH_Rafael123'),
+('Team - Carlos', 'cs1209042018@unab.edu.sv', 'HASH_Carlos123'),
+('Team - Alexis', 'cr0367042024@unab.edu.sv', 'HASH_Alexis123'),
+('Team - Andrea', 'no0882042024@unab.edu.sv', 'HASH_Andrea123'),
+('Cliente - Jaime', 'jaime.berrios08@gmail.com', 'HASH_Fer123');
+
+INSERT INTO usuario_rol (usuario_id, rol_id)
+VALUES
+(1, 1), -- Administrador
+(2, 2), -- Supervisor
+(3, 3), -- Team
+(4, 3), -- Team
+(5, 3), -- Team
+(6, 4); -- Usuario/cliente
+</code></pre>
+                <ol start="5" class="mb-0">
+                    <li>Configura tu backend (API o aplicación .NET/PHP) con el usuario y contraseña de MySQL que definiste en XAMPP.</li>
+                    <li>Prueba el login con los usuarios insertados y ajusta los permisos según el rol.</li>
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 Ferrooriente. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
