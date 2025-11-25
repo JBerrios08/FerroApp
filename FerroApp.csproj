@@ -60,6 +60,12 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="MySql.Data">
+      <HintPath>packages\MySql.Data.8.0.33\lib\net48\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
@@ -67,6 +73,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Carrito.aspx" />
+    <Content Include="Inventario.aspx" />
+    <Content Include="Ticket.aspx" />
     <Content Include="Web.config" />
     <Content Include="index.html" />
     <Content Include="nosotros.html" />
@@ -74,7 +83,33 @@
     <Content Include="tienda.html" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\CarritoCompras.cs" />
+    <Compile Include="App_Code\ConexionBD.cs" />
+    <Compile Include="App_Code\CorreoHelper.cs" />
+    <Compile Include="App_Code\ItemCarrito.cs" />
+    <Compile Include="App_Code\PdfHelper.cs" />
+    <Compile Include="Carrito.aspx.cs">
+      <DependentUpon>Carrito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carrito.aspx.designer.cs">
+      <DependentUpon>Carrito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario.aspx.cs">
+      <DependentUpon>Inventario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inventario.aspx.designer.cs">
+      <DependentUpon>Inventario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ticket.aspx.cs">
+      <DependentUpon>Ticket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ticket.aspx.designer.cs">
+      <DependentUpon>Ticket.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
